@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Rujukan Rumah Sakit</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to right, #b3e5fc, #e1f5fe);
+      margin: 0;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #01579b;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    form {
+      background: white;
+      max-width: 650px;
+      margin: auto;
+      padding: 25px 35px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      border: 3px solid #81d4fa;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+      color: #01579b;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select,
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 2px solid #b3e5fc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #0288d1;
+      outline: none;
+      box-shadow: 0 0 5px #4fc3f7;
+    }
+
+    .checkbox-group, .radio-group {
+      background: #f1faff;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #b3e5fc;
+      margin-top: 8px;
+    }
+
+    .checkbox-group label, .radio-group label {
+      display: inline-block;
+      margin-right: 20px;
+      color: #333;
+      font-weight: normal;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    button {
+      background: linear-gradient(to right, #0288d1, #00bcd4);
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 5px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #0277bd, #0097a7);
+      transform: scale(1.05);
+    }
+
+    .reset-btn {
+      background: linear-gradient(to right, #e53935, #ef5350);
+    }
+
+    .reset-btn:hover {
+      background: linear-gradient(to right, #b71c1c, #f44336);
+    }
+
+    .signature {
+      margin-top: 25px;
+      border-top: 2px dashed #b3e5fc;
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .signature div {
+      width: 45%;
+      text-align: center;
+    }
+
+    .signature span {
+      display: block;
+      margin-top: 60px;
+      border-top: 1px solid #333;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🩺 Formulir Rujukan Rumah Sakit</h2>
+
+  <!-- GANTI EMAIL DI SINI -->
+  <form action="https://formsubmit.co/riskazein653@gmail.com" method="POST" enctype="multipart/form-data">
+
+    <!-- Tambahan pengaturan FormSubmit -->
+    <input type="hidden" name="_subject" value="Rujukan Baru dari Formulir Rumah Sakit">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <label for="nama">Nama Pasien:</label>
+    <input type="text" id="nama" name="Nama Pasien" placeholder="Masukkan nama pasien" required>
+
+    <label for="nik">NIK:</label>
+    <input type="text" id="nik" name="NIK" placeholder="Masukkan NIK" required>
+
+    <label for="password">Kode Rujukan (Password):</label>
+    <input type="password" id="password" name="Kode Rujukan" placeholder="Masukkan kode rujukan">
+
+    <label>Gejala yang Dialami:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="Gejala" value="Demam"> Demam</label>
+      <label><input type="checkbox" name="Gejala" value="Batuk"> Batuk</label>
+      <label><input type="checkbox" name="Gejala" value="Sesak Napas"> Sesak Napas</label>
+      <label><input type="checkbox" name="Gejala" value="Mual"> Mual</label>
+      <label><input type="checkbox" name="Gejala" value="Pusing"> Pusing</label>
+    </div>
+
+    <label>Jenis Kelamin:</label>
+    <div class="radio-group">
+      <label><input type="radio" name="Jenis Kelamin" value="Laki-laki"> Laki-laki</label>
+      <label><input type="radio" name="Jenis Kelamin" value="Perempuan"> Perempuan</label>
+    </div>
+
+    <label for="rujukan">Rumah Sakit Tujuan:</label>
+    <select id="rujukan" name="Rumah Sakit Tujuan" required>
+      <option value="">-- Pilih Rumah Sakit --</option>
+      <option value="RSUD Pekanbaru">RS  Collombia</option>
+      <option value="RS Awal Bros">RS Adam Malik</option>
+      <option value="RS Sansani">RS Murni Teguh</option>
+      <option value="RS Syafira">RS Grand Medistra</option>
+    </select>
+
+    <label for="file">Unggah Hasil Pemeriksaan (PDF/JPG):</label>
+    <input type="file" id="file" name="Hasil Pemeriksaan">
+
+    <div class="btn-container">
+      <button type="submit">✅ Kirim Rujukan</button>
+      <button type="reset" class="reset-btn">❌ Reset Form</button>
+    </div>
+
+    <div class="signature">
+      <div>
+        <strong>Dokter Pemeriksa</strong>
+        <span></span>
+      </div>
+      <div>
+        <strong>Pasien</strong>
+        <span></span>
+      </div>
+    </div>
+
+  </form>
+
+</body>
+</html>
